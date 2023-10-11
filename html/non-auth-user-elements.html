@@ -1,0 +1,16 @@
+    <div class="add-warning-message">
+        Для добавления объявления необходимо <a href="../login.php">aвторизоваться</a>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("log_out-btn").style.display = "none";
+        });
+    </script>
+    <style>
+        .add-warning-message {
+            font-size: 14px;
+        }
+        .add-warning-message > a {
+            text-decoration: none;
+        }
+    </style>

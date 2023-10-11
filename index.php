@@ -9,16 +9,19 @@
         padding: 0;
         font-family: sans-serif;
       }
+      button {
+        cursor: pointer;
+      }
     </style>
     <title>Доска объявлений</title>
   </head> 
   <body>
     <?php
-        require_once "./html-components/nav.html";
+        require_once "./html/nav.html";
     ?>
     <div class="search-container">
         <form class="search-form" action="./includes/search.inc.php">
-            <input class="search-field" type="text">
+            <input class="search-field" type="text" placeholder="Я ищу ...">
             <button class="search-btn">Найти</button>
         </form>
         <style>
@@ -41,6 +44,11 @@
                 font-size: 18px;
                 font-weight: 200;
             }
+            .search-field::placeholder {
+                color: rgb(150, 150, 150);
+                letter-spacing: 2px;
+                font-size: 18px;
+            }
             .search-btn {
                 height: 100%;
                 width: 100px;
@@ -55,6 +63,18 @@
             }
         </style>
     </div>
+    <div class="add-menu">
+        <?php
+            require_once "auth-user.php";
+        ?>
+    </div>
+    <style>
+        .add-menu {
+            width: fit-content;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
     <div class="container">
         <div class="board">
             <?php
