@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Доска объявлений</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./style/style.css">
+      <title>Доска объявлений</title>
   </head> 
   <body>
     <?php
@@ -29,26 +30,6 @@
       </form>
       <button class="change-display-btn" id="open-sign-in-btn">Войти</button>
     </div>
-    <script>
-      const signUpForm = document.getElementById("signup-form-container"); 
-      const signInForm = document.getElementById("login-form-container"); 
-
-      document.getElementById("log_out-btn").style.display = "none";      
-      signInForm.style.display = "none";
-
-      // !FIXME: change form function 
-      const openSignUp = document.getElementById("open-sign-up-btn");
-      const openSignIn = document.getElementById("open-sign-in-btn");
-
-      openSignUp.onclick = () => {
-        signInForm.style.display = "none";
-        signUpForm.style.display = "block";
-      }
-
-      openSignIn.onclick = () => {
-        signUpForm.style.display = "none";
-        signInForm.style.display = "block";
-      }
-    </script>
+    <script src="./js/login.js"></script>
 </body>
 </html>
