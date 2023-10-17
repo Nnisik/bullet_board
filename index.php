@@ -22,7 +22,15 @@
         <div class="container">
             <div class="board">
                 <?php
-                    $i = 0;
+                    require_once "./includes/db.inc.php";
+
+                    // get data from db
+                    $sql = "SELECT * FROM adverts";
+                    $stmt = mysqli_stmt_init($conn);
+                    mysqli_stmt_execute($stmt);
+                    $resultData = mysqli_stmt_get_result($stmt);
+                    // echo $resultData;
+
                     while ($i < 5){
                         echo '<div class="board-item">';
                         echo '<div class="item-info">';
