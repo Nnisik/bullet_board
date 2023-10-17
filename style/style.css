@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+.nav-bar {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: end;
+}
+
+.nav-bar_btn {
+  height: 50px;
+  width: 130px;
+  font-size: 20px;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition-duration: 0.5s;
+  letter-spacing: 1px;
+}
+
+.nav-bar_btn:hover {
+  color: rgb(31, 77, 88);
+  border-bottom: 2px solid rgb(88, 155, 172);
+  background: linear-gradient(180deg, white, white, white, rgb(240, 240, 240));
+}
+
+.search-container {
+  margin: 20px auto 10px;
+  width: fit-content;
+  height: 50px;
+}
+
+.search-form {
+  border: 1px solid grey;
+  height: 100%;
+}
+
+.search-field {
+  height: 100%;
+  width: 460px;
+  border: none;
+  border-right: 1px solid grey;
+  outline: none;
+  padding: 0 20px;
+  font-size: 18px;
+  font-weight: 200;
+}
+
+.search-field::placeholder {
+  color: rgb(150, 150, 150);
+  letter-spacing: 2px;
+  font-size: 18px;
+}
+
+.search-btn {
+  height: 100%;
+  width: 100px;
+  border: none;
+  background: transparent;
+  font-size: 18px;
+  transition-duration: 0.3s;
+}
+
+.search-btn:hover {
+  color: white;
+  background: rgb(31, 77, 88);
+}
+
+#add-new-btn {
+  width: 300px;
+  height: 30px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  background: transparent;
+  border: 1px solid grey;
+}
+
+.add-new-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+}
+
+.add-new-menu {
+  position: inherit;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: white;
+}
+
+.add-new-menu > div {
+  display: flex;
+  justify-content: end;
+}
+
+.add-new-menu > h2 {
+  margin-top: 40px;
+}
+
+.add-new-menu > form {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin: 20px auto;
+}
+
+.add-new-menu input {
+  margin-top: 10px;
+}
+
+#add-menu_close-btn {
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  margin-right: 10px;
+}
+
+#add-menu_close-btn:hover {
+  color: red;
+}
+
+#add-new_header-input {
+  height: 30px;
+  font-size: 18px;
+}
+
+#add-new_descrip-input {
+  height: 200px;
+  font-size: 16px;
+}
+
+#add-new_submit-btn {
+  margin: 20px auto 0;
+  padding: 10px;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.add-warning-message {
+  font-size: 14px;
+}
+
+.add-warning-message > a {
+  text-decoration: none;
+}
+
+.add-menu {
+  width: fit-content;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  height: fit-content;
+}
+
+.board {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.board-item {
+  height: 100px;
+  padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid grey;
+  margin: 0 0 10px;
+}
+
+.item-info > p {
+  padding-left: 10px;
+}
+
+.item-extra-info {
+  display: flex;
+  justify-content: end;
+}
+
+.auth-form-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: fit-content;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid grey;
+  text-align: center;
+}
+
+.auth-form-container > h2 {
+  margin: 30px 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.auth-form-container > form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.auth-form-container input {
+  height: 25px;
+  margin: 5px 0;
+  padding: 0 10px;
+  font-size: 18px;
+  outline: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid grey;
+}
+
+.auth-form-container > form button {
+  height: fit-content;
+  width: fit-content;
+  margin: 20px auto 0;
+  padding: 5px 15px;
+  border: none;
+  background: rgb(31, 77, 88);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.change-display-btn {
+  margin-top: 50px;
+  border: none;
+  background: transparent;
+  color: rgb(31, 77, 88);
+  font-size: 14px;
+}
