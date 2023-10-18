@@ -62,6 +62,6 @@
         printf("Connect failed: %s <br>", $mysqli_connection->connect_error);
         exit();
     }
-    printf("Connected succesfully. <br>");
+    // printf("Connected succesfully. <br>");
 
     
