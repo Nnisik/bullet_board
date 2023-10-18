@@ -8,12 +8,14 @@
     </head>
     <body>
         <?php require_once "./html/nav.html";?>
+        <!--
         <div class="search-container">
             <form class="search-form" action="./includes/search.inc.php">
                 <input class="search-field" type="text" placeholder="Я ищу ...">
                 <button class="search-btn">Найти</button>
             </form>
         </div>
+        -->
         <div class="add-menu">
             <?php 
                 require_once "auth-user.php";
