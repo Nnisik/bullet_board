@@ -32,47 +32,10 @@ button {
   border-bottom: 2px solid rgb(88, 155, 172);
   background: linear-gradient(180deg, white, white, white, rgb(240, 240, 240));
 }
-
-.search-container {
-  margin: 20px auto 10px;
-  width: fit-content;
-  height: 50px;
-}
-
-.search-form {
-  border: 1px solid grey;
-  height: 100%;
-}
-
-.search-field {
-  height: 100%;
-  width: 460px;
-  border: none;
-  border-right: 1px solid grey;
-  outline: none;
-  padding: 0 20px;
-  font-size: 18px;
-  font-weight: 200;
-}
-
-.search-field::placeholder {
+*::placeholder {
   color: rgb(150, 150, 150);
   letter-spacing: 2px;
   font-size: 18px;
-}
-
-.search-btn {
-  height: 100%;
-  width: 100px;
-  border: none;
-  background: transparent;
-  font-size: 18px;
-  transition-duration: 0.3s;
-}
-
-.search-btn:hover {
-  color: white;
-  background: rgb(31, 77, 88);
 }
 
 #add-new-btn {
@@ -253,4 +216,9 @@ button {
   background: transparent;
   color: rgb(31, 77, 88);
   font-size: 14px;
+}
+
+#new_form > input {
+  padding: 0 20px;
+  font-size: 24px;
 }

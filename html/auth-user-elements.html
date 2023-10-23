@@ -6,12 +6,47 @@
                     <button id="add-menu_close-btn">x</button>
                 </div>
                 <h2>Новое объявление</h2>
-                <form>
-                    <input id="add-new_header-input" type="text">
-                    <input id="add-new_descrip-input" type="text">
+                <form id="new_form">
+                    <input id="add-new_header" type="text" name='header'placeholder="Название..." required>
+                    <input id="add-new-descrip" type="text" name='description'placeholder="Описание...">
                     <button id="add-new_submit-btn">Создать</button>
                 </form>
             </div>
+            <style>
+                #add-new_header,
+                #add-new-descrip {
+                    padding: 10px;
+                    font-size: 18px;
+                }
+            </style>
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", ()=>{
+            // get currernt user ID
+            const params = new URLSearchParams(document.location.search);
+            let userID = params.get("id");
+            let header = "./includes/new.inc.php?id="+userID;
+
+            document.getElementById("add-new_submit-btn").onclick = ()=>{
+                let header_value = document.getElementById("add-new_header");
+                let descrip_value = document.getElementById("add-new_descrip");
+
+                header += "&header=" + header_value;
+                header += "&descrip=" + descrip_value;
+
+                // get current data
+                let today = new Date();
+                let day = today.getDate();
+                let month = today.getMonth() + 1;
+                let year = today.getFullYear();
+                let create_date = day + "-" + month + "-" + year;
+                
+                header += "&date=" + create_date;
+
+                // HTTP redirect
+                window.location.replace(header + "&submit");
+            }
+        });
+    </script>
     <script src="./js/index.js"></script>

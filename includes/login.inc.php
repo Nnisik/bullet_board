@@ -15,29 +15,25 @@
     // connect to db
     require_once "./db.inc.php";
 
-    $sql = "SELECT * FROM users WHERE usersLogin = ?;";
-    $stmt = mysqli_stmt_init($conn);
-
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../login.php?error=stmtFailed");
-    }
-
-    mysqli_stmt_bind_param($stmt, "s", $login);
-    mysqli_stmt_execute($stmt);
-
     // getting data of user base on entered login
-    $resultData = mysqli_stmt_get_result($stmt);
-    $row = mysqli_fetch_assoc($resultData);
+    $users = getAllUsers();
+    $user = null;
 
     // check if user found
-    if (empty($row)) {
-        header("location: ../login.php?error=userDoesntExist");
+    foreach ($users as $row) {
+        if ($row['usersLogin'] == $login) {
+            $user = $row;
+            break;
+        }
+    }
+    if ($user == null) {
+        header("location: ../login.php?error=userNotFound");
     }
 
     // check if entered password is correct
-    if ($password != $row["userPassword"]) {
+    if ($password != $user["userPassword"]) {
         header("location: ../login.php?error=wrongPassword");
     }
 
     // go to main page
-    header("location: ../login.php?id");
+    header("location: ../index.php?id=".$row['usersId']);

@@ -21,28 +21,17 @@
 
     // connect to db
     require_once "db.inc.php";
-
-    $sql = "SELECT * FROM users WHERE usersLogin = ?;";
-    $stmt = mysqli_stmt_init($conn);
-
-    // getting user with entered login 
-    mysqli_stmt_bind_param($stmt, "s", $login);
-    mysqli_stmt_execute($stmt);
-    $resultData - mysqli_stmt_get_result($stmt);
     
     // check no user found
-    if ($row = mysqli_fetch_assoc($resultData)) {
-        header("location: ../login.php?error=userExist");
+    $users = getAllUsers();
+    foreach ($users as $row) {
+        if ($row['usersLogin'] == $login) {
+            header("location: ../login.php?error=loginTaken");
+        }
     }
 
-    mysqli_stmt_close($stmt);
-
     // creating new user
-    $sql = "INSERT INTO users (usersName, usersLogin, usersPassword) VALUES (?,?,?);";
-    $stmt = mysqli_stmt_init($conn);
-    mysqli_stmt_bind_param($stmt, "sss", $login, $password);
-    mysqli_stmt_execute($stmt);
-    mysqli_stmt_close();
+    createNewUser($name, $login, $password);
 
     // go to new page
     header("location: ../index.php?id");
