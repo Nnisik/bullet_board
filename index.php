@@ -8,14 +8,6 @@
     </head>
     <body>
         <?php require_once "./html/nav.html";?>
-        <!--
-        <div class="search-container">
-            <form class="search-form" action="./includes/search.inc.php">
-                <input class="search-field" type="text" placeholder="Я ищу ...">
-                <button class="search-btn">Найти</button>
-            </form>
-        </div>
-        -->
         <div class="add-menu">
             <?php 
                 require_once "auth-user.php";
@@ -24,8 +16,22 @@
         <div class="container">
             <div class="board">
                 <?php
+                    include_once "./includes/db.inc.php";
+
+                    foreach (getAllAdverts() as $row) {
+                        echo '<div class="board-item">';
+                        echo '<div class="item-info">';
+                        echo '<h2>'.$row['advert_header'].'</h2>';
+                        echo '<p>'.$row['desrip'].'</p>';
+                        echo '</div>';
+                        echo '<div class="item-extra-info">';
+                        echo $row['creatorID'].', '.$row['create_date'];
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    
                     $i = 0;
-                    while ($i < 5){
+                    while ($i <= 5){
                         echo '<div class="board-item">';
                         echo '<div class="item-info">';
                         echo '<h2>Item header</h2>';

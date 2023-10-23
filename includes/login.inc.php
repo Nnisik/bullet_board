@@ -36,4 +36,4 @@
     }
 
     // go to main page
-    header("location: ../index.php?id");
+    header("location: ../index.php?id=".$row['usersId']);

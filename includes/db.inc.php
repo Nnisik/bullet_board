@@ -49,10 +49,10 @@
         if ($result = $stmt->execute()) {
             echo "success";
             $stmt->free_result;
-            return;
+            return TRUE;
         }
         echo "error";
-        return;
+        return FALSE;
     }
 
     // connecting to db
