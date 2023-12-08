@@ -1,1 +1,2 @@
-# bullet_board
+# Full-stack Bullet Board Site
+***
